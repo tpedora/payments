@@ -1,0 +1,24 @@
+.jumbo-docs {
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.header-docs {
+  margin-top: 5px;
+  font-size: 35px;
+}
+
+.jumbo-docs p {
+  font-size: 14px;
+  width: 70%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.table-docs {
+  width: 30%;
+  margin: auto;
+  margin-top: 20px;
+}
