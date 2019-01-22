@@ -87,7 +87,7 @@ class Open extends React.Component {
 {/* Bill Rate Focused*/}
               <td>Bill Rate Focus</td>
               <td>
-                <input type="text" placeholder="Bill Rate" onChange={this.handleBill}/></td>
+                <input type="text" placeholder="Enter Bill Rate" onChange={this.handleBill}/></td>
               <td>{this.props.billFocusPay}</td>
               <td>{this.props.billFocusTerm}</td>
               <td>
@@ -104,7 +104,7 @@ class Open extends React.Component {
               <td>Pay Rate Focus</td>
               <td>{this.props.payFocusBill}</td>
               <td>
-                <input type="text" placeholder="Pay Rate" onChange={this.handlePayRate}/></td>
+                <input type="text" placeholder="Enter Pay Rate" onChange={this.handlePayRate}/></td>
               <td>{this.props.payFocusTerm}</td>
               <td>
                   <select name="margin" onChange={this.handlePayMarkup}>
@@ -121,7 +121,7 @@ class Open extends React.Component {
               <td>{this.props.termFocusBill}</td>
               <td>{this.props.termFocusPay}</td>
               <td>
-                <input type="text" placeholder="Term Rate" onChange={this.handleTermRate}/></td>
+                <input type="text" placeholder="Enter Term Rate" onChange={this.handleTermRate}/></td>
               <td>
                 <select name="margin" onChange={this.handleTermMarginMarkup}>
                   <option selected disabled>Margin</option>

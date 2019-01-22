@@ -93,7 +93,7 @@ class Fixed extends React.Component {
 {/* Bill Focus Fields */}
               <td>Bill Rate Focus</td>
               <td>
-                <input type="text" placeholder="Bill Rate" onChange={this.handleBill}/>
+                <input type="text" placeholder="Enter Bill Rate" onChange={this.handleBill}/>
               </td>
               <td>{this.props.billFocusPay}</td>
               <td>{this.props.billFocusTerm}</td>
@@ -113,7 +113,7 @@ class Fixed extends React.Component {
               <td>Pay Rate Focus</td>
               <td>{this.props.payFocusBill}</td>
               <td>
-                <input type="text" placeholder="Pay Rate" onChange={this.handlePayRate}/>
+                <input type="text" placeholder="Enter Pay Rate" onChange={this.handlePayRate}/>
               </td>
               <td>{this.props.payFocusTerm}</td>
               <td>
@@ -133,7 +133,7 @@ class Fixed extends React.Component {
               <td>{this.props.termFocusBill}</td>
               <td>{this.props.termFocusPay}</td>
               <td>
-                <input type="text" placeholder="Term Rate" onChange={this.handleTermRate}/>
+                <input type="text" placeholder="Enter Term Rate" onChange={this.handleTermRate}/>
               </td>
               <td>
                 <select name="margin" onChange={this.handleTermMarginMarkup}>
