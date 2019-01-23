@@ -26,7 +26,7 @@ class App extends Component {
           <Navbar.Header pullLeft>
             <Navbar.Brand>
               <i className="fas fa-calculator icon"></i>
-              <a className="title">Bill/Pay Rate Calculator</a>
+              <a className="title" href="https://friendly-clarke-0f858b.netlify.com">Bill/Pay Rate Calculator</a>
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
