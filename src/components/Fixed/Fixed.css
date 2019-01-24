@@ -24,3 +24,14 @@ td {
 th {
   text-align: center;
 }
+
+.margin {
+  display: inline-block;
+  width: 82px;
+  max-width: 82px
+}
+
+.margin-multi {
+  width: 164px;
+  max-width: 164px;
+}

@@ -131,8 +131,8 @@ class Fixed extends React.Component {
                   <option value="18">18%</option>
                 </select>
               </td>
-              <td>{this.props.payFocusMarkupPercentage}</td>
-              <td>{this.props.payFocusMarkup}</td>
+              <td className="margin">{this.props.payFocusMarkupPercentage}</td>
+              <td className="margin-multi">{this.props.payFocusMarkup}</td>
             </tr>
             <tr>
 {/* Term Focus Fields */}
@@ -153,8 +153,8 @@ class Fixed extends React.Component {
                   <option value="18">18%</option>
                 </select>
               </td>
-              <td>{this.props.termFocusMarkupPercent}</td>
-              <td>{this.props.termFocusMarkup}</td>
+              <td className="margin">{this.props.termFocusMarkupPercent}</td>
+              <td className="margin-multi">{this.props.termFocusMarkup}</td>
             </tr>
           </tbody>
         </Table>

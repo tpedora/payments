@@ -101,8 +101,8 @@ class Open extends React.Component {
                   <option value="25">25%</option>
                 </select>
               </td>
-              <td>N/A</td>
-              <td>N/A</td>
+              <td className="margin">N/A</td>
+              <td className="margin-multi">N/A</td>
             </tr>
             <tr>
 {/* Pay Rate Focused*/}
@@ -120,8 +120,8 @@ class Open extends React.Component {
                   <option value="25">25%</option>
                 </select>
               </td>
-              <td>{this.props.payFocusMarkupPercent}</td>
-              <td>{this.props.payFocusMarkup}</td>
+              <td className="margin">{this.props.payFocusMarkupPercent}</td>
+              <td className="margin-multi">{this.props.payFocusMarkup}</td>
             </tr>
             <tr>
 {/* Term Rate Focused*/}
@@ -139,8 +139,8 @@ class Open extends React.Component {
                   <option value="25">25%</option>
                 </select>
               </td>
-              <td>{this.props.termFocusMarkupPercent}</td>
-              <td>{this.props.termFocusMarkup}</td>
+              <td className="margin">{this.props.termFocusMarkupPercent}</td>
+              <td className="margin-multi">{this.props.termFocusMarkup}</td>
             </tr>
           </tbody>
         </Table>
