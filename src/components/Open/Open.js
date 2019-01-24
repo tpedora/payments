@@ -80,6 +80,8 @@ class Open extends React.Component {
               <th>Pay Rate</th>
               <th>Term Rate</th>
               <th>Margin</th>
+              <th>Markup</th>
+              <th>Markup Multiplier</th>
             </tr>
           </thead>
           <tbody>
@@ -99,8 +101,11 @@ class Open extends React.Component {
                   <option value="25">25%</option>
                 </select>
               </td>
+              <td>N/A</td>
+              <td>N/A</td>
             </tr>
             <tr>
+{/* Pay Rate Focused*/}
               <td>Pay Rate Focus</td>
               <td>{this.props.payFocusBill}</td>
               <td>
@@ -115,8 +120,11 @@ class Open extends React.Component {
                   <option value="25">25%</option>
                 </select>
               </td>
+              <td>{this.props.payFocusMarkupPercent}</td>
+              <td>{this.props.payFocusMarkup}</td>
             </tr>
             <tr>
+{/* Term Rate Focused*/}
               <td>Term Rate Focus</td>
               <td>{this.props.termFocusBill}</td>
               <td>{this.props.termFocusPay}</td>
@@ -131,6 +139,8 @@ class Open extends React.Component {
                   <option value="25">25%</option>
                 </select>
               </td>
+              <td>{this.props.termFocusMarkupPercent}</td>
+              <td>{this.props.termFocusMarkup}</td>
             </tr>
           </tbody>
         </Table>

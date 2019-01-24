@@ -86,6 +86,8 @@ class Fixed extends React.Component {
               <th>Pay Rate</th>
               <th>Term Rate</th>
               <th>Margin</th>
+              <th>Markup</th>
+              <th>Markup Multiplier</th>
             </tr>
           </thead>
           <tbody>
@@ -100,6 +102,7 @@ class Fixed extends React.Component {
               <td>
                 <select name="margin" onChange={this.handleMargin}>
                   <option selected disabled>Margin</option>
+                  <option value="7.7">7.7%</option>
                   <option value="11.5">11.5%</option>
                   <option value="11.9">11.9%</option>
                   <option value="15">15%</option>
@@ -107,6 +110,8 @@ class Fixed extends React.Component {
                   <option value="18">18%</option>
                 </select>
               </td>
+              <td>N/A</td>
+              <td>N/A</td>
             </tr>
             <tr>
 {/* Pay Focus Fields */}
@@ -126,6 +131,8 @@ class Fixed extends React.Component {
                   <option value="18">18%</option>
                 </select>
               </td>
+              <td>{this.props.payFocusMarkupPercentage}</td>
+              <td>{this.props.payFocusMarkup}</td>
             </tr>
             <tr>
 {/* Term Focus Fields */}
@@ -146,6 +153,8 @@ class Fixed extends React.Component {
                   <option value="18">18%</option>
                 </select>
               </td>
+              <td>{this.props.termFocusMarkupPercent}</td>
+              <td>{this.props.termFocusMarkup}</td>
             </tr>
           </tbody>
         </Table>

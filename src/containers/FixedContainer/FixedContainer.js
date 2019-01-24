@@ -13,9 +13,11 @@ class FixedContainer extends React.Component {
       bBill: 0,
 /* Pay Focus Values*/
       pMarkup: 0,
+      pMarkupPercent: 0,
       pPay: 0,
 /* Term Focus Values IMPORTANT termMarkup is the Margins Markup, NOT related to term fee's*/
       termMarkup: 0,
+      termMarkupPercent: 0,
       termRate: 0
     }
     this.billFocusMargin = this.billFocusMargin.bind(this);
@@ -36,7 +38,8 @@ class FixedContainer extends React.Component {
 
 //Methods to update Pay Focus Inputs
   payMarkup(num) {
-    this.setState({pMarkup: num});
+    const markupPercent = num * 100 - 100;
+    this.setState({pMarkup: num, pMarkupPercent: markupPercent});
   }
 
   payFocusPay(num) {
@@ -45,7 +48,8 @@ class FixedContainer extends React.Component {
 
 //Methods to update Term Focus Inputs
   termMarkup(num) {
-    this.setState({termMarkup: num});
+    const markupPercent = num * 100 - 100;
+    this.setState({termMarkup: num, termMarkupPercent: markupPercent});
   }
 
   termRate(num) {
@@ -64,10 +68,14 @@ class FixedContainer extends React.Component {
         payFocusPay={this.payFocusPay}
         payFocusBill={`$${parseFloat(this.state.pPay * this.state.pMarkup).toFixed(2)}`}
         payFocusTerm={`$${parseFloat(this.state.pPay * this.state.tBill).toFixed(2)}`}
+        payFocusMarkup={this.state.pMarkup}
+        payFocusMarkupPercentage={`${parseFloat(this.state.pMarkupPercent).toFixed(2)}%`}
         termMarkup={this.termMarkup}
         termFocusTerm={this.termRate}
         termFocusPay={`$${parseFloat(this.state.termRate * this.state.tMarkup).toFixed(2)}`}
-        termFocusBill={`$${parseFloat(this.state.termRate * this.state.tMarkup * this.state.termMarkup).toFixed(2)}`}/>
+        termFocusBill={`$${parseFloat(this.state.termRate * this.state.tMarkup * this.state.termMarkup).toFixed(2)}`}
+        termFocusMarkup={this.state.termMarkup}
+        termFocusMarkupPercent={`${parseFloat(this.state.termMarkupPercent).toFixed(2)}%`} />
       </div>
     )
   }
