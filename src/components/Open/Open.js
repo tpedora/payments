@@ -1,6 +1,7 @@
 import React from 'react';
 import './Open.css';
 import { Jumbotron, Table } from 'react-bootstrap';
+import Rates from '../../data/rates.json';
 
 class Open extends React.Component {
   constructor(props) {
@@ -30,7 +31,10 @@ class Open extends React.Component {
 //Methods to extract Pay Focused Values
 
   handlePayMarkup(e) {
-    if (e.target.value === '18') {
+      
+    this.props.payMarkup(Rates[e.target.value]);
+    
+    /* if (e.target.value === '18') {
       this.props.payMarkup(1.220);
     } else if (e.target.value === '20') {
       this.props.payMarkup(1.250);
@@ -38,7 +42,7 @@ class Open extends React.Component {
       this.props.payMarkup(1.282);
     } else if (e.target.value === '25') {
       this.props.payMarkup(1.333);
-    }
+    } */
   }
 
   handlePayRate(e) {
@@ -49,7 +53,10 @@ class Open extends React.Component {
 
 // Methods to extract Term Focused Values
   handleTermMarginMarkup(e) {
-    if (e.target.value === '18') {
+
+    this.props.termMarkup(Rates[e.target.value]);
+
+    /* if (e.target.value === '18') {
       this.props.termMarkup(1.220);
     } else if (e.target.value === '20') {
       this.props.termMarkup(1.250);
@@ -57,7 +64,7 @@ class Open extends React.Component {
       this.props.termMarkup(1.282);
     } else if (e.target.value === '25') {
       this.props.termMarkup(1.333);
-    }
+    } */
   }
 
   handleTermRate(e) {
