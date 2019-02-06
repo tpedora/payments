@@ -1,5 +1,6 @@
 import React from 'react';
 import './Fixed.css';
+import Rates from '../../data/FixedRates.json';
 import { Jumbotron, Table } from 'react-bootstrap';
 
 class Fixed extends React.Component {
@@ -18,58 +19,36 @@ class Fixed extends React.Component {
     let value = parseFloat(e.target.value).toFixed(2);
     let valNum = parseFloat(value);
     let margin = (100 - valNum) / 100;
-    this.props.billFocusMargin(margin);
+    this.props.updatebMargin(margin);
   }
 
   handleBill(e) {
     let value = parseFloat(e.target.value).toFixed(2);
     let billRate = parseFloat(value);
-    this.props.billFocusBill(billRate);
+    this.props.updatebBill(billRate);
   }
 
 //Methods to extract Pay Focused Values
 
   handlePayMarkup(e) {
-    if (e.target.value === '11.5') {
-      this.props.payMarkup(1.13);
-    } else if (e.target.value === '11.9') {
-      this.props.payMarkup(1.135);
-    } else if (e.target.value === '15') {
-      this.props.payMarkup(1.176);
-    } else if (e.target.value === '16') {
-      this.props.payMarkup(1.190);
-    } else if (e.target.value === '18') {
-      this.props.payMarkup(1.220);
-    }
+    this.props.updatepMarkup(Rates[e.target.value]);
   }
 
   handlePayRate(e) {
     let value = parseFloat(e.target.value).toFixed(2);
     let payRate = parseFloat(value);
-    this.props.payFocusPay(payRate);
+    this.props.updatepPay(payRate);
   }
 
 // Methods to extract Term Focused Values
   handleTermMarginMarkup(e) {
-    if (e.target.value === '7.7') {
-      this.props.termMarkup(1.084)
-    } else if (e.target.value === '11.5') {
-      this.props.termMarkup(1.13);
-    } else if (e.target.value === '11.9') {
-      this.props.termMarkup(1.135);
-    } else if (e.target.value === '15') {
-      this.props.termMarkup(1.176);
-    } else if (e.target.value === '16') {
-      this.props.termMarkup(1.190);
-    } else if (e.target.value === '18') {
-      this.props.termMarkup(1.220);
-    }
+    this.props.updatetMarkup(Rates[e.target.value]);
   }
 
   handleTermRate(e) {
     let value = parseFloat(e.target.value).toFixed(2);
     let termRate = parseFloat(value);
-    this.props.termFocusTerm(termRate);
+    this.props.updatetRate(termRate);
   }
 
   render() {

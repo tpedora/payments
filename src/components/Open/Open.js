@@ -1,5 +1,6 @@
 import React from 'react';
 import './Open.css';
+import Rates from '../../data/OpenRates.json';
 import { Jumbotron, Table } from 'react-bootstrap';
 
 class Open extends React.Component {
@@ -18,52 +19,36 @@ class Open extends React.Component {
     let value = parseFloat(e.target.value).toFixed(2);
     let valNum = parseFloat(value);
     let margin = (100 - valNum) / 100;
-    this.props.billFocusMargin(margin);
+    this.props.updatebMargin(margin);
   }
 
   handleBill(e) {
     let value = parseFloat(e.target.value).toFixed(2);
     let billRate = parseFloat(value);
-    this.props.billFocusBill(billRate);
+    this.props.updatebBill(billRate);
   }
 
 //Methods to extract Pay Focused Values
 
   handlePayMarkup(e) {
-    if (e.target.value === '18') {
-      this.props.payMarkup(1.220);
-    } else if (e.target.value === '20') {
-      this.props.payMarkup(1.250);
-    } else if (e.target.value === '22') {
-      this.props.payMarkup(1.282);
-    } else if (e.target.value === '25') {
-      this.props.payMarkup(1.333);
-    }
+    this.props.updatepMarkup(Rates[e.target.value]);
   }
 
   handlePayRate(e) {
     let value = parseFloat(e.target.value).toFixed(2);
     let payRate = parseFloat(value);
-    this.props.payFocusPay(payRate);
+    this.props.updatepPay(payRate);
   }
 
 // Methods to extract Term Focused Values
   handleTermMarginMarkup(e) {
-    if (e.target.value === '18') {
-      this.props.termMarkup(1.220);
-    } else if (e.target.value === '20') {
-      this.props.termMarkup(1.250);
-    } else if (e.target.value === '22') {
-      this.props.termMarkup(1.282);
-    } else if (e.target.value === '25') {
-      this.props.termMarkup(1.333);
-    }
+    this.props.updatetMarkup(Rates[e.target.value]);
   }
 
   handleTermRate(e) {
     let value = parseFloat(e.target.value).toFixed(2);
     let termRate = parseFloat(value);
-    this.props.termFocusTerm(termRate);
+    this.props.updatetRate(termRate);
   }
 
   render() {
