@@ -1,5 +1,6 @@
 import React from 'react';
 import Open from '../../components/Open/Open';
+import OpenSalary from '../../components/Open/OpenSalary';
 import Rates from '../../data/TermFees.json';
 
 class OpenContainer extends React.Component {
@@ -30,9 +31,19 @@ class OpenContainer extends React.Component {
     this.setState({bMargin: num});
   }
 
+  // updatebBill(num) {
+  //   if (this.state.bBill === undefined) {
+  //     this.setState({bBill: 0});
+  //   } else {
+  //     this.setState({bBill: num});
+  //   }
+  // }
+
   updatebBill(num) {
-    this.setState({bBill: num});
-  }
+    this.setState(prevState => ({
+        bBill: prevState.bBill === undefined ? 0 : num
+    }));
+}
 
 //Methods to update Pay Focus Inputs
   updatepMarkup(num) {
@@ -62,11 +73,13 @@ class OpenContainer extends React.Component {
 //Variables to calculate Pay Focused Values
     const pBill = parseFloat(this.state.pPay * this.state.pMarkup).toFixed(2);
     const pTerm = parseFloat(this.state.pPay * Rates["tMargin"]).toFixed(2);
+    const pPayDecimal = parseFloat(this.state.pPay).toFixed(2);
     const pPercent = parseFloat(this.state.pMarkupPercent).toFixed(2);
 
 //Variables to calculate Term Focused Values
     const tPay = parseFloat(this.state.tRate * Rates["tMarkup"]).toFixed(2);
     const tBill = parseFloat(tPay * this.state.tMarkup).toFixed(2);
+    const tTermDecimal = parseFloat(this.state.tRate).toFixed(2);
     const tPercent = parseFloat(this.state.tMarkupPercent).toFixed(2);
 
     return (
@@ -87,7 +100,14 @@ class OpenContainer extends React.Component {
         termFocusPay={`$${tPay}`}
         termFocusBill={`$${tBill}`}
         termFocusMarkup={this.state.tMarkup}
-        termFocusMarkupPercent={`${tPercent}%`}/>
+        termFocusMarkupPercent={`${tPercent}%`} />
+        <OpenSalary 
+        billFocusPay={bPay}
+        billFocusTerm={bTerm}
+        payFocusPay={pPayDecimal}
+        payFocusTerm={pTerm}
+        termFocusPay={tPay}
+        termFocusTerm={tTermDecimal} />
       </div>
     )
   }

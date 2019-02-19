@@ -1,6 +1,7 @@
 import React from 'react';
 import Fixed from '../../components/Fixed/Fixed';
 import Rates from '../../data/TermFees.json';
+import FixedSalary from '../../components/Fixed/FixedSalary';
 
 class FixedContainer extends React.Component {
   constructor(props) {
@@ -63,10 +64,12 @@ class FixedContainer extends React.Component {
     const pBill = parseFloat(this.state.pPay * this.state.pMarkup).toFixed(2);
     const pTerm = parseFloat(this.state.pPay * Rates["tMargin"]).toFixed(2);
     const pPercent = parseFloat(this.state.pMarkupPercent).toFixed(2);
+    const pPayDecimal = parseFloat(this.state.pPay).toFixed(2);
 
 // Variables to perform calculations on Term Focused Values
     const tPay = parseFloat(this.state.tRate * Rates["tMarkup"]).toFixed(2);
     const tBill = parseFloat(tPay * this.state.tMarkup).toFixed(2);
+    const tTermDecimal = parseFloat(this.state.tRate).toFixed(2);
     const tPercent = parseFloat(this.state.tMarkupPercent).toFixed(2);
 
     return (
@@ -88,6 +91,13 @@ class FixedContainer extends React.Component {
         termFocusBill={`$${tBill}`}
         termFocusMarkup={this.state.tMarkup}
         termFocusMarkupPercent={`${tPercent}%`} />
+        <FixedSalary 
+        billFocusPay={bPay}
+        billFocusTerm={bTerm}
+        payFocusPay={pPayDecimal}
+        payFocusTerm={pTerm}
+        termFocusPay={tPay}
+        termFocusTerm={tTermDecimal} />
       </div>
     )
   }

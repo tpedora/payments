@@ -34,3 +34,8 @@ th {
   width: 164px;
   max-width: 164px;
 }
+
+.salary td, th {
+  max-width: 130px;
+  width: 130px;
+}
